@@ -1,0 +1,55 @@
+/* Estilo para el mat-card */
+mat-card {
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Estilo para la tabla */
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th {
+    text-align: center;
+}
+
+.mat-icon-button {
+    padding: 5px;
+}
+
+.mat-icon-button:hover {
+    background-color: #ccc;
+}
+
+/* Estilo para la barra de búsqueda y botón de añadir */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter-input {
+    flex: 0 0 80%;
+    margin-right: 20px;
+}
+
+.add-button {
+    flex: 0 0 15%;
+    margin-right: 15px;
+}
+
+.add-button .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.add-button .mat-icon {
+    margin-right: 5px;
+}
+
+/* Estilo para las columnas de la tabla */
+.actions-column {
+    width: fit-content;
+}

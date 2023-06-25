@@ -14,3 +14,6 @@
 # Build artifacts
 npm-debug.log
 yarn-error.log
+
+# Angular cache folder
+.angular/cache/

@@ -1,0 +1,28 @@
+{
+    "superheroes": [
+        {
+            "id": 1,
+            "name": "Superman",
+            "powers": [
+                "Volar",
+                "Super fuerza"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Spiderman",
+            "powers": [
+                "Trepar paredes",
+                "Sentido arácnido"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Batman",
+            "powers": [
+                "Inteligencia",
+                "Habilidades de combate"
+            ]
+        }
+    ]
+}
