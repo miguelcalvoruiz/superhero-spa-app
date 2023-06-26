@@ -15,4 +15,8 @@ export class SuperheroService {
   getAllSuperheros(): Observable<Superhero[]> {
     return this.http.get<Superhero[]>(this.apiUrl);
   }
+
+  addSuperhero(superhero: Superhero): Observable<Superhero> {
+    return this.http.post<Superhero>(this.apiUrl, superhero);
+  }
 }
