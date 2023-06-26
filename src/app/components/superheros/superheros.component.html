@@ -26,9 +26,9 @@
                 <button mat-icon-button color="primary">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="warn">
+                <button mat-icon-button color="warn" (click)="openDeleteConfirmationDialog(row)">
                     <mat-icon>delete</mat-icon>
-                </button>                
+                </button>
             </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -37,5 +37,17 @@
             <td class="mat-cell" colspan="3">No hay datos que coincidan con el filtro "{{input.value}}"</td>
         </tr>
     </table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 25]" [pageSize]="10" [length]="dataSource.data.length" (page)="handlePageEvent($event)"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]" [pageSize]="10" [length]="dataSource.data.length"
+        (page)="handlePageEvent($event)"></mat-paginator>
 </mat-card>
+
+<ng-template #deleteConfirmationDialogTemplate>
+    <h2 mat-dialog-title>Confirmación de eliminación</h2>
+    <mat-dialog-content>
+        <p>{{ data?.message }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-button color="warn" [mat-dialog-close]="true">Eliminar</button>
+    </mat-dialog-actions>
+</ng-template>

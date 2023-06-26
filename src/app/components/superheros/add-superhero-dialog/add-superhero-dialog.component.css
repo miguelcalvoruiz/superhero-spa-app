@@ -1,0 +1,15 @@
+mat-horizontal-stepper {
+    margin-top: 20px;
+}
+
+.stepper-buttons { 
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}

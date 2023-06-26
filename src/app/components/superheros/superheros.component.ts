@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Superhero } from 'src/app/models/superhero';
 import { SuperheroService } from 'src/app/services/superhero.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -15,8 +15,10 @@ import { MatPaginator } from '@angular/material/paginator';
 export class SuperherosComponent implements OnInit {
   dataSource: MatTableDataSource<Superhero>;
   displayedColumns: string[] = ['name', 'powers', 'actions'];
+  data: { message: string } = { message: '' };
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild('deleteConfirmationDialogTemplate') deleteConfirmationDialogTemplate!: TemplateRef<any>;
 
   constructor(
     private superheroService: SuperheroService,
@@ -26,10 +28,10 @@ export class SuperherosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getSuperheroes();
+    this.getSuperheros();
   }
 
-  getSuperheroes(): void {
+  getSuperheros(): void {
     this.superheroService.getAllSuperheros().subscribe((superheros) => {
       this.dataSource.data = superheros;
       this.dataSource.paginator = this.paginator;
@@ -50,7 +52,7 @@ export class SuperherosComponent implements OnInit {
       if (result) {
         this.addSuperhero(result);
         setTimeout(() => {
-          this.getSuperheroes();
+          this.getSuperheros();
         }, 1000);
       }
     });
@@ -65,5 +67,27 @@ export class SuperherosComponent implements OnInit {
   handlePageEvent(event: any): void {
     this.paginator.pageIndex = event.pageIndex;
     this.paginator.pageSize = event.pageSize;
+  }
+
+  openDeleteConfirmationDialog(superhero: Superhero): void {
+    this.data.message = `¿Estás seguro que quieres eliminar a ${superhero.name}?`;
+    const dialogRef = this.dialog.open(this.deleteConfirmationDialogTemplate, {
+      width: '500px',
+      disableClose: true,
+      data: this.data
+    });
+    console.log(this.data);
+    
+    dialogRef.afterClosed().subscribe((result) => {
+      if(result){
+        this.deleteSuperhero(superhero.id);
+      }
+    });
+  }
+
+  deleteSuperhero(id: string): void {
+    this.superheroService.deleteSuperhero(id).subscribe(() => {
+      this.getSuperheros();
+    });
   }
 }

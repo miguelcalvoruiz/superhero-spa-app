@@ -19,4 +19,9 @@ export class SuperheroService {
   addSuperhero(superhero: Superhero): Observable<Superhero> {
     return this.http.post<Superhero>(this.apiUrl, superhero);
   }
+
+  deleteSuperhero(id: string): Observable<void> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<void>(url);
+  }
 }
