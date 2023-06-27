@@ -1,4 +1,5 @@
-<h1 mat-dialog-title>{{ isEditing ? ('label.dialog.editTitle' | translate) : ('label.dialog.addTitle' | translate) }}</h1>
+<h1 mat-dialog-title>{{ isEditing ? ('label.dialog.editTitle' | translate) : ('label.dialog.addTitle' | translate) }}
+</h1>
 <div mat-dialog-content>
     <mat-horizontal-stepper>
         <mat-step>
@@ -9,7 +10,8 @@
                     <input matInput formControlName="name" required>
                 </mat-form-field>
                 <div class="stepper-buttons">
-                    <button mat-button matStepperNext color="primary" [disabled]="!isNameValid()">{{ 'label.button.next' | translate }}</button>
+                    <button mat-button matStepperNext color="primary" [disabled]="!isNameValid()">{{ 'label.button.next'
+                        | translate }}</button>
                 </div>
             </form>
         </mat-step>
@@ -18,12 +20,16 @@
             <form [formGroup]="powersFormGroup">
                 <mat-form-field>
                     <mat-label>{{ 'label.powers' | translate }}</mat-label>
-                    <input matInput formControlName="powers" required>
+                    <mat-select formControlName="powers" required multiple>
+                        <mat-option *ngFor="let power of possiblePowers" [value]="power">{{ power }}</mat-option>
+                    </mat-select>
                 </mat-form-field>
                 <div class="stepper-buttons">
-                    <button mat-button matStepperPrevious color="warn">{{ 'label.button.previous' | translate }}</button>
+                    <button mat-button matStepperPrevious color="warn">{{ 'label.button.previous' | translate
+                        }}</button>
                     <button mat-button matStepperNext color="primary" [disabled]="!powersFormControl.valid"
-                        (click)="save()">{{ isEditing ? ('label.button.edit' | translate) : ('label.button.save' | translate) }}</button>
+                        (click)="save()">{{ isEditing ? ('label.button.edit' | translate) : ('label.button.save' |
+                        translate) }}</button>
                 </div>
             </form>
         </mat-step>

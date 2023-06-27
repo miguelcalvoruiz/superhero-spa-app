@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -12,6 +12,7 @@ export class AddSuperheroDialogComponent {
   nameFormGroup: FormGroup;
   powersFormGroup: FormGroup;
   isEditing: boolean = false;
+  possiblePowers: string[] = ['Agilidad', 'Agilidad sobrehumana', 'Comunicación con las hormigas', 'Comunicación con los animales marinos', 'Control del agua', 'Control del clima', 'Control del trueno', 'Control mental', 'Creación de objetos con el anillo', 'Curación acelerada', 'Energí...l', 'Reflejos mejorados', 'Regeneración', 'Romper la cuarta pared', 'Sabiduría divina', 'Sentido arácnido', 'Sentidos aumentados', 'Super-aire', 'Super fuerza', 'Super velocidad', 'Telepatía', 'Telequinesis', 'Trepar paredes', 'Vibranium', 'Viaje astral', 'Viaje en el tiempo', 'Visión de calor', 'Visión precisa', 'Volar']
 
   constructor(
     public dialogRef: MatDialogRef<AddSuperheroDialogComponent>,
@@ -28,7 +29,7 @@ export class AddSuperheroDialogComponent {
     if (data && data.superhero) {
       this.isEditing = true;
       this.nameFormGroup.setValue({ name: data.superhero.name });
-      this.powersFormGroup.setValue({ powers: data.superhero.powers.join(', ') });
+      this.powersFormGroup.setValue({ powers: data.superhero.powers });
     }
   }
 
@@ -41,7 +42,7 @@ export class AddSuperheroDialogComponent {
       const superhero = {
         id: this.isEditing ? this.data.superhero.id : this.generateId(),
         name: this.nameFormGroup.value['name'],
-        powers: this.powersFormGroup.value['powers'].split(',').map((power: string) => power.trim())
+        powers: this.powersFormGroup.value['powers']
       };
       this.dialogRef.close(superhero);
     }

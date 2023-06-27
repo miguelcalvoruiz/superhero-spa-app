@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { TranslateService } from './services/translate.service';
+import { MatSelectModule } from '@angular/material/select';
 
 export function translateFactory(provider: TranslateService){
   return () => provider.getData();
@@ -44,6 +45,7 @@ export function translateFactory(provider: TranslateService){
     MatCardModule,
     MatDialogModule,
     MatStepperModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule
   ],
