@@ -18,6 +18,7 @@ export class SuperherosComponent implements OnInit {
   data: { message: string } = { message: '' };
   isEditing = false;
   selectedSuperhero: Superhero | null = null;
+  isLoading = false;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild('deleteConfirmationDialogTemplate') deleteConfirmationDialogTemplate!: TemplateRef<any>;
@@ -34,9 +35,11 @@ export class SuperherosComponent implements OnInit {
   }
 
   getSuperheros(): void {
+    this.isLoading = true;
     this.superheroService.getAllSuperheros().subscribe((superheros) => {
       this.dataSource.data = superheros;
       this.dataSource.paginator = this.paginator;
+      this.isLoading = false;
     });
   }
 
@@ -62,7 +65,7 @@ export class SuperherosComponent implements OnInit {
 
   addSuperhero(superhero: Superhero): void {
     this.superheroService.addSuperhero(superhero).subscribe((newSuperhero: Superhero) => {
-      console.log('Nuevo superhero añadido: ' + newSuperhero);
+      console.log('Nuevo superheroe añadido: ' + newSuperhero);
     });
   }
 
