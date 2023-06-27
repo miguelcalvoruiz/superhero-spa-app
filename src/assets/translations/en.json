@@ -1,0 +1,17 @@
+{
+    "label.title.page": "Superhero SPA",
+    "label.filter.input": "Search...",
+    "label.button.add": "Add superhero",
+    "label.name": "Name",
+    "label.powers": "Powers",
+    "label.noData": "No data matching the filter ",
+    "label.dialog.confirmationTitle": "Deletion Confirmation",
+    "label.dialog.editTitle": "Edit Superhero",
+    "label.dialog.addTitle": "Add Superhero",
+    "label.button.cancel": "Cancel",
+    "label.button.delete": "Delete",
+    "label.button.next": "Next",
+    "label.button.previous": "Previous",
+    "label.button.save": "Save",
+    "label.button.update": "Update"
+}

@@ -114,7 +114,6 @@ export class SuperherosComponent implements OnInit {
 
   editSuperhero(superhero: Superhero): void {
     this.superheroService.editSuperhero(superhero).subscribe((editedSuperhero: Superhero) => {
-      console.log('Superheroe actualizado: ' + editedSuperhero);
       this.getSuperheros();      
     })
   }

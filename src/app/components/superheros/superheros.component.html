@@ -1,23 +1,23 @@
 <mat-card>
-    <mat-card-title>Superheroes</mat-card-title>
+    <mat-card-title>{{'label.title.page' | translate}}</mat-card-title>
     <div class="filter-bar">
         <mat-form-field appearance="standard" class="filter-input">
-            <mat-label>Buscar...</mat-label>
+            <mat-label>{{'label.filter.input' | translate}}</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
         </mat-form-field>
 
         <button mat-raised-button color="primary" class="add-button" (click)="openAddDialog()">
             <mat-icon>add</mat-icon>
-            Añadir Superheroe
+            {{'label.button.add' | translate}}
         </button>
     </div>
     <table mat-table [dataSource]="dataSource" class="table">
         <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'label.name' | translate }}</th>
             <td mat-cell *matCellDef="let row">{{row.name}}</td>
         </ng-container>
         <ng-container matColumnDef="powers">
-            <th mat-header-cell *matHeaderCellDef>Poderes</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'label.powers' | translate }}</th>
             <td mat-cell *matCellDef="let row">{{row.powers.join(', ')}}</td>
         </ng-container>
         <ng-container matColumnDef="actions">
@@ -34,7 +34,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="3">No hay datos que coincidan con el filtro "{{input.value}}"</td>
+            <td class="mat-cell" colspan="3">{{ 'label.noData' | translate }} "{{ input.value }}"</td>
         </tr>
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 25]" [pageSize]="10" [length]="dataSource.data.length"
@@ -42,12 +42,12 @@
 </mat-card>
 
 <ng-template #deleteConfirmationDialogTemplate>
-    <h2 mat-dialog-title>Confirmación de eliminación</h2>
+    <h2 mat-dialog-title>{{ 'label.dialog.confirmationTitle' | translate }}</h2>
     <mat-dialog-content>
         <p>{{ data?.message }}</p>
     </mat-dialog-content>
     <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>Cancelar</button>
-        <button mat-button color="warn" [mat-dialog-close]="true">Eliminar</button>
+        <button mat-button mat-dialog-close>{{ 'label.button.cancel' | translate }}</button>
+        <button mat-button color="warn" [mat-dialog-close]="true">{{ 'label.button.delete' | translate }}</button>
     </mat-dialog-actions>
 </ng-template>

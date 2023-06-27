@@ -1,5 +1,5 @@
 import { MatDialogModule } from '@angular/material/dialog';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,12 +17,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddSuperheroDialogComponent } from './components/superheros/add-superhero-dialog/add-superhero-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslatePipe } from './pipes/translate.pipe';
+import { TranslateService } from './services/translate.service';
+
+export function translateFactory(provider: TranslateService){
+  return () => provider.getData();
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     SuperherosComponent,
-    AddSuperheroDialogComponent
+    AddSuperheroDialogComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    TranslateService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: translateFactory,
+      deps: [TranslateService],
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

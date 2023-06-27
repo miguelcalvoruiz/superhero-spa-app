@@ -1,0 +1,17 @@
+{
+    "label.title.page": "Superhéroes SPA",
+    "label.filter.input": "Buscar...",
+    "label.button.add": "Añadir superhéroe",
+    "label.name": "Nombre",
+    "label.powers": "Poderes",
+    "label.noData": "No hay datos que coincidan con el filtro ",
+    "label.dialog.confirmationTitle": "Confirmación de eliminación",
+    "label.dialog.editTitle": "Editar Superhéroe",
+    "label.dialog.addTitle": "Añadir Superhéroe",
+    "label.button.cancel": "Cancelar",
+    "label.button.delete": "Eliminar",
+    "label.button.next": "Siguiente",
+    "label.button.previous": "Anterior",
+    "label.button.save": "Guardar",
+    "label.button.update": "Actualizar"
+}
