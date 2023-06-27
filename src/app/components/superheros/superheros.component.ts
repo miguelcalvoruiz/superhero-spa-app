@@ -16,6 +16,8 @@ export class SuperherosComponent implements OnInit {
   dataSource: MatTableDataSource<Superhero>;
   displayedColumns: string[] = ['name', 'powers', 'actions'];
   data: { message: string } = { message: '' };
+  isEditing = false;
+  selectedSuperhero: Superhero | null = null;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild('deleteConfirmationDialogTemplate') deleteConfirmationDialogTemplate!: TemplateRef<any>;
@@ -89,5 +91,31 @@ export class SuperherosComponent implements OnInit {
     this.superheroService.deleteSuperhero(id).subscribe(() => {
       this.getSuperheros();
     });
+  }
+
+  openEditDialog(superhero: Superhero): void {
+    this.selectedSuperhero = {...superhero};
+    this.isEditing = true;
+    const dialogRef = this.dialog.open(AddSuperheroDialogComponent, {
+      width: '500px',
+      disableClose: true,
+      data: {
+        superhero: this.selectedSuperhero
+      }
+    });
+    dialogRef.afterClosed().subscribe((result: Superhero) => {
+      if (result) {
+        this.editSuperhero(result);
+      }
+      this.isEditing = false;
+      this.selectedSuperhero = null;
+    });
+  }
+
+  editSuperhero(superhero: Superhero): void {
+    this.superheroService.editSuperhero(superhero).subscribe((editedSuperhero: Superhero) => {
+      console.log('Superheroe actualizado: ' + editedSuperhero);
+      this.getSuperheros();      
+    })
   }
 }

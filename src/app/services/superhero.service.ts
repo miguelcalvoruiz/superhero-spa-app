@@ -24,4 +24,11 @@ export class SuperheroService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);
   }
+
+  editSuperhero(superhero: Superhero): Observable<Superhero> {
+    console.log(superhero.id);
+    
+    const url = `${this.apiUrl}/${superhero.id}`;
+    return this.http.put<Superhero>(url, superhero);
+  }
 }

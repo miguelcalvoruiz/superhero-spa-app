@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Añadir Superheroe</h1>
+<h1 mat-dialog-title>{{ isEditing ? 'Editar Superhéroe' : 'Añadir Superhéroe' }}</h1>
 <div mat-dialog-content>
     <mat-horizontal-stepper>
         <mat-step>
@@ -23,7 +23,7 @@
                 <div class="stepper-buttons">
                     <button mat-button matStepperPrevious color="warn">Anterior</button>
                     <button mat-button matStepperNext color="primary" [disabled]="!powersFormControl.valid"
-                        (click)="save()">Guardar</button>
+                        (click)="save()">{{ isEditing ? 'Actualizar' : 'Guardar' }}</button>
                 </div>
             </form>
         </mat-step>

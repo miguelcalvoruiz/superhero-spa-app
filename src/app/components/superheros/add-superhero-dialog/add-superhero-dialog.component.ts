@@ -11,6 +11,7 @@ export class AddSuperheroDialogComponent {
 
   nameFormGroup: FormGroup;
   powersFormGroup: FormGroup;
+  isEditing: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<AddSuperheroDialogComponent>,
@@ -23,6 +24,12 @@ export class AddSuperheroDialogComponent {
     this.powersFormGroup = new FormGroup({
       powers: new FormControl('', Validators.required)
     });
+
+    if (data && data.superhero) {
+      this.isEditing = true;
+      this.nameFormGroup.setValue({ name: data.superhero.name });
+      this.powersFormGroup.setValue({ powers: data.superhero.powers.join(', ') });
+    }
   }
 
   cancel(): void {
@@ -32,11 +39,10 @@ export class AddSuperheroDialogComponent {
   save(): void {
     if (this.powersFormControl.valid) {
       const superhero = {
-        id: this.generateId(),
+        id: this.isEditing ? this.data.superhero.id : this.generateId(),
         name: this.nameFormGroup.value['name'],
         powers: this.powersFormGroup.value['powers'].split(',').map((power: string) => power.trim())
       };
-      // Lógica para guardar el superhéroe en el servidor
       this.dialogRef.close(superhero);
     }
   }
