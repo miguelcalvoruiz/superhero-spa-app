@@ -1,7 +1,9 @@
-<h1 mat-dialog-title>{{ isEditing ? ('label.dialog.editTitle' | translate) : ('label.dialog.addTitle' | translate) }}
-</h1>
+<h1 mat-dialog-title>{{ isEditing ? ('label.dialog.editTitle' | translate) : ('label.dialog.addTitle' | translate) }}</h1>
+
 <div mat-dialog-content>
+    <!-- Stepper -->
     <mat-horizontal-stepper [linear]="true">
+        <!-- Paso 1: Nombre -->
         <mat-step>
             <ng-template matStepLabel>{{ 'label.name' | translate }}</ng-template>
             <form [formGroup]="nameFormGroup">
@@ -10,11 +12,12 @@
                     <input matInput formControlName="name" required>
                 </mat-form-field>
                 <div class="stepper-buttons">
-                    <button mat-button matStepperNext color="primary" [disabled]="!isNameValid()">{{ 'label.button.next'
-                        | translate }}</button>
+                    <button mat-button matStepperNext color="primary" [disabled]="!isNameValid()">{{ 'label.button.next' | translate }}</button>
                 </div>
             </form>
         </mat-step>
+
+        <!-- Paso 2: Poderes -->
         <mat-step>
             <ng-template matStepLabel>{{ 'label.powers' | translate }}</ng-template>
             <form [formGroup]="powersFormGroup">
@@ -25,27 +28,27 @@
                     </mat-select>
                 </mat-form-field>
                 <div class="stepper-buttons">
-                    <button mat-button matStepperPrevious color="warn">{{ 'label.button.previous' | translate
-                        }}</button>
-                    <button mat-button matStepperNext color="primary" [disabled]="!powersFormControl.valid">{{ 'label.button.next'
-                        | translate }}</button>
+                    <button mat-button matStepperPrevious color="warn">{{ 'label.button.previous' | translate }}</button>
+                    <button mat-button matStepperNext color="primary" [disabled]="!powersFormControl.valid">{{ 'label.button.next' | translate }}</button>
                 </div>
             </form>
         </mat-step>
+
+        <!-- Paso 3: Confirmación -->
         <mat-step>
             <ng-template matStepLabel>{{ 'label.confirm' | translate }}</ng-template>
             <div>
                 <p>{{ 'label.confirm.Add' | translate }} {{ nameFormGroup.value.name }} {{ 'label.confirm.withPowers' | translate }} {{ powersFormGroup.value.powers ? powersFormGroup.value.powers.join(', ') : '' }}?</p>
                 <div class="stepper-buttons">
-                    <button mat-button matStepperPrevious color="warn">{{ 'label.button.previous' | translate
-                        }}</button>
-                    <button mat-button color="primary" (click)="save()">{{ isEditing ? ('label.button.edit' | translate)
-                        : ('label.button.save' | translate) }}</button>
+                    <button mat-button matStepperPrevious color="warn">{{ 'label.button.previous' | translate }}</button>
+                    <button mat-button color="primary" (click)="save()">{{ isEditing ? ('label.button.edit' | translate) : ('label.button.save' | translate) }}</button>
                 </div>
             </div>
         </mat-step>
     </mat-horizontal-stepper>
 </div>
+
 <div mat-dialog-actions>
+    <!-- Botón de cancelar -->
     <button mat-button (click)="cancel()">{{ 'label.button.cancel' | translate }}</button>
 </div>

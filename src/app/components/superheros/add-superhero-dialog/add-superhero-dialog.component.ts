@@ -33,10 +33,17 @@ export class AddSuperheroDialogComponent {
     }
   }
 
+  /**
+   * Cierra el diálogo sin guardar los cambios.
+   */
   cancel(): void {
     this.dialogRef.close();
   }
 
+  /**
+   * Guarda el superhéroe creado o editado.
+   * Si los campos son válidos, emite el objeto Superhero resultante y cierra el diálogo.
+   */
   save(): void {
     if (this.powersFormControl.valid) {
       const superhero = {
@@ -48,6 +55,10 @@ export class AddSuperheroDialogComponent {
     }
   }
 
+  /**
+   * Genera un ID aleatorio para un nuevo superhéroe.
+   * @returns El ID generado.
+   */
   private generateId(): string {
     const length = 6;
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -60,14 +71,26 @@ export class AddSuperheroDialogComponent {
     return 'ID-' + id;
   }
 
+  /**
+   * Verifica si el campo de nombre es válido.
+   * @returns `true` si el campo de nombre es válido, de lo contrario, `false`.
+   */
   isNameValid(): boolean {
     return this.nameFormGroup.controls['name'].valid;
   }
 
+  /**
+   * Verifica si el campo de poderes es válido.
+   * @returns `true` si el campo de poderes es válido, de lo contrario, `false`.
+   */
   isPowersValid(): boolean {
     return this.powersFormControl.valid;
   }
 
+  /**
+   * Obtiene el control del formulario para el campo de poderes.
+   * @returns El control del formulario para el campo de poderes.
+   */
   get powersFormControl() {
     return this.powersFormGroup.controls['powers'];
   }

@@ -1,46 +1,66 @@
 <mat-card>
+    <!-- Barra de filtro -->
     <div class="filter-bar">
         <mat-form-field appearance="standard" class="filter-input">
             <mat-label>{{'label.filter.input' | translate}}</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
         </mat-form-field>
 
+        <!-- Botón de agregar -->
         <button mat-raised-button color="primary" class="add-button" (click)="openAddDialog()">
             <mat-icon>add</mat-icon>
             {{'label.button.add' | translate}}
         </button>
     </div>
+
+    <!-- Contenedor de tabla -->
     <div class="table-container" *ngIf="!isLoading">
         <table mat-table [dataSource]="dataSource" class="table">
+            <!-- Columna: Nombre -->
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef class="mat-column-name">{{ 'label.name' | translate }}</th>
                 <td mat-cell *matCellDef="let row" class="mat-column-name">{{row.name}}</td>
             </ng-container>
+
+            <!-- Columna: Poderes -->
             <ng-container matColumnDef="powers">
                 <th mat-header-cell *matHeaderCellDef class="mat-column-powers">{{ 'label.powers' | translate }}</th>
                 <td mat-cell *matCellDef="let row" class="mat-column-powers">{{row.powers.join(', ')}}</td>
             </ng-container>
+
+            <!-- Columna: Acciones -->
             <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef class="mat-column-actions"></th>
                 <td mat-cell *matCellDef="let row" class="mat-column-actions">
+                    <!-- Botón de editar -->
                     <button mat-icon-button color="primary" (click)="openEditDialog(row)" [disabled]="isEditing">
                         <mat-icon matTooltip="{{ 'label.tooltip.edit' | translate }}" matTooltipPosition="above">edit</mat-icon>
                     </button>
+                    <!-- Botón de eliminar -->
                     <button mat-icon-button color="warn" (click)="openDeleteConfirmationDialog(row)">
                         <mat-icon matTooltip="{{ 'label.tooltip.delete' | translate }}" matTooltipPosition="above">delete</mat-icon>
                     </button>
                 </td>
             </ng-container>
+
+            <!-- Fila de encabezado -->
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+            <!-- Fila de datos -->
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Fila sin datos -->
             <tr class="mat-row" *matNoDataRow>
                 <td class="mat-cell" colspan="3">{{ 'label.noData' | translate }} "{{ input.value }}"</td>
             </tr>
         </table>
     </div>
+
+    <!-- Paginador -->
     <mat-paginator [pageSizeOptions]="[5, 10, 25]" [pageSize]="10" [length]="dataSource.data.length"
         (page)="handlePageEvent($event)"></mat-paginator>
 
+    <!-- Spinner de carga -->
     <div class="h-100" *ngIf="isLoading">
         <div class="spinner">
             <img src="assets/img/spinner.gif">
@@ -48,6 +68,7 @@
     </div>
 </mat-card>
 
+<!-- Plantilla de confirmación de eliminación -->
 <ng-template #deleteConfirmationDialogTemplate>
     <h2 mat-dialog-title>{{ 'label.dialog.confirmationTitle' | translate }}</h2>
     <mat-dialog-content>
