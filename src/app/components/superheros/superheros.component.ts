@@ -45,16 +45,20 @@ export class SuperherosComponent implements OnInit {
 
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.dataSource.filterPredicate = (data: Superhero, filter: string) => {
+      return data.name.toLowerCase().includes(filter);
+    };
     this.dataSource.filter = filterValue;
   }
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddSuperheroDialogComponent, {
-      width: '500px',
+      width: '700px',
       disableClose: true
     });
     dialogRef.afterClosed().subscribe((result: Superhero) => {
       if (result) {
+        result.name = result.name.charAt(0).toUpperCase() + result.name.substring(1).toLowerCase();
         this.addSuperhero(result);
         setTimeout(() => {
           this.getSuperheros();
@@ -82,9 +86,9 @@ export class SuperherosComponent implements OnInit {
       data: this.data
     });
     console.log(this.data);
-    
+
     dialogRef.afterClosed().subscribe((result) => {
-      if(result){
+      if (result) {
         this.deleteSuperhero(superhero.id);
       }
     });
@@ -97,10 +101,10 @@ export class SuperherosComponent implements OnInit {
   }
 
   openEditDialog(superhero: Superhero): void {
-    this.selectedSuperhero = {...superhero};
+    this.selectedSuperhero = { ...superhero };
     this.isEditing = true;
     const dialogRef = this.dialog.open(AddSuperheroDialogComponent, {
-      width: '500px',
+      width: '700px',
       disableClose: true,
       data: {
         superhero: this.selectedSuperhero
@@ -117,7 +121,7 @@ export class SuperherosComponent implements OnInit {
 
   editSuperhero(superhero: Superhero): void {
     this.superheroService.editSuperhero(superhero).subscribe((editedSuperhero: Superhero) => {
-      this.getSuperheros();      
+      this.getSuperheros();
     })
   }
 }

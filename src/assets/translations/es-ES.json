@@ -13,5 +13,10 @@
     "label.button.next": "Siguiente",
     "label.button.previous": "Anterior",
     "label.button.save": "Guardar",
-    "label.button.edit": "Actualizar"
+    "label.button.edit": "Actualizar",
+    "label.confirm": "Confirmación",
+    "label.confirm.Add": "¿Está seguro que desea añadir el superhéroe ",
+    "label.confirm.withPowers": " con los poderes: ",
+    "label.tooltip.delete": "Eliminar",
+    "label.tooltip.edit": "Editar"
 }

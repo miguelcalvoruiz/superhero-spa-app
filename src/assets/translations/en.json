@@ -1,7 +1,7 @@
 {
-    "label.title.page": "Superhero SPA",
+    "label.title.page": "Superheroes SPA",
     "label.filter.input": "Search...",
-    "label.button.add": "Add superhero",
+    "label.button.add": "Add Superhero",
     "label.name": "Name",
     "label.powers": "Powers",
     "label.noData": "No data matching the filter ",
@@ -13,5 +13,11 @@
     "label.button.next": "Next",
     "label.button.previous": "Previous",
     "label.button.save": "Save",
-    "label.button.edit": "Update"
-}
+    "label.button.edit": "Update",
+    "label.confirm": "Confirmation",
+    "label.confirmAdd": "Are you sure you want to add the superhero",
+    "label.withPowers": "with powers:",
+    "label.tooltip.delete": "Delete",
+    "label.tooltip.edit": "Edit"
+  }
+  

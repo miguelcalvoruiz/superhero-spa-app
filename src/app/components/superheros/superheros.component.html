@@ -13,21 +13,21 @@
     <div class="table-container" *ngIf="!isLoading">
         <table mat-table [dataSource]="dataSource" class="table">
             <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef>{{ 'label.name' | translate }}</th>
-                <td mat-cell *matCellDef="let row">{{row.name}}</td>
+                <th mat-header-cell *matHeaderCellDef class="mat-column-name">{{ 'label.name' | translate }}</th>
+                <td mat-cell *matCellDef="let row" class="mat-column-name">{{row.name}}</td>
             </ng-container>
             <ng-container matColumnDef="powers">
-                <th mat-header-cell *matHeaderCellDef>{{ 'label.powers' | translate }}</th>
-                <td mat-cell *matCellDef="let row">{{row.powers.join(', ')}}</td>
+                <th mat-header-cell *matHeaderCellDef class="mat-column-powers">{{ 'label.powers' | translate }}</th>
+                <td mat-cell *matCellDef="let row" class="mat-column-powers">{{row.powers.join(', ')}}</td>
             </ng-container>
             <ng-container matColumnDef="actions">
-                <th mat-header-cell *matHeaderCellDef></th>
-                <td mat-cell *matCellDef="let row">
+                <th mat-header-cell *matHeaderCellDef class="mat-column-actions"></th>
+                <td mat-cell *matCellDef="let row" class="mat-column-actions">
                     <button mat-icon-button color="primary" (click)="openEditDialog(row)" [disabled]="isEditing">
-                        <mat-icon>edit</mat-icon>
+                        <mat-icon matTooltip="{{ 'label.tooltip.edit' | translate }}" matTooltipPosition="above">edit</mat-icon>
                     </button>
                     <button mat-icon-button color="warn" (click)="openDeleteConfirmationDialog(row)">
-                        <mat-icon>delete</mat-icon>
+                        <mat-icon matTooltip="{{ 'label.tooltip.delete' | translate }}" matTooltipPosition="above">delete</mat-icon>
                     </button>
                 </td>
             </ng-container>

@@ -13,5 +13,10 @@
     "label.button.next": "Next",
     "label.button.previous": "Previous",
     "label.button.save": "Save",
-    "label.button.edit": "Update"
+    "label.button.edit": "Update",
+    "label.confirm": "Confirmation",
+    "label.confirmAdd": "Are you sure you want to add the superhero",
+    "label.withPowers": "with powers:",
+    "label.tooltip.delete": "Delete",
+    "label.tooltip.edit": "Edit"
 }

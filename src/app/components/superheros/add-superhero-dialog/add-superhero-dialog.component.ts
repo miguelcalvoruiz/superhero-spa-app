@@ -12,7 +12,7 @@ export class AddSuperheroDialogComponent {
   nameFormGroup: FormGroup;
   powersFormGroup: FormGroup;
   isEditing: boolean = false;
-  possiblePowers: string[] = ['Agilidad', 'Agilidad sobrehumana', 'Comunicación con las hormigas', 'Comunicación con los animales marinos', 'Control del agua', 'Control del clima', 'Control del trueno', 'Control mental', 'Creación de objetos con el anillo', 'Curación acelerada', 'Energí...l', 'Reflejos mejorados', 'Regeneración', 'Romper la cuarta pared', 'Sabiduría divina', 'Sentido arácnido', 'Sentidos aumentados', 'Super-aire', 'Super fuerza', 'Super velocidad', 'Telepatía', 'Telequinesis', 'Trepar paredes', 'Vibranium', 'Viaje astral', 'Viaje en el tiempo', 'Visión de calor', 'Visión precisa', 'Volar']
+  possiblePowers: string[] = ['Agilidad', 'Agilidad sobrehumana', 'Aumentar de tamaño', 'Castigo divino', 'Cargar objetos con energía', 'Comunicación con las hormigas', 'Comunicación con los animales marinos', 'Control del agua', 'Control del clima', 'Control del trueno', 'Control mental', 'Creación de objetos con el anillo', 'Curación acelerada', 'Encogerse', 'Energía chi', 'Experta en artes marciales', 'Experta en espionaje', 'Experto en combate cuerpo a cuerpo', 'Fénix', 'Fuerza sobrehumana', 'Garras retráctiles', 'Genio intelectual', 'Grito sónico', 'Habilidades de combate', 'Inmunidad', 'Inteligencia', 'Intangibilidad', 'Inmortalidad', 'Liderazgo', 'Magia', 'Maestría en arquería', 'Maestría en artes marciales', 'Maestría en combate', 'Manipulación de la realidad', 'Manipulación de los elementos', 'Moto infernal', 'Poder de salto', 'Poderes arácnidos', 'Proyección de energía', 'Puño de hierro', 'Rayos láser', 'Rayos X', 'Regeneración acelerada', 'Regeneración', 'Reflejos mejorados', 'Romper la cuarta pared', 'Sabiduría divina', 'Sentido arácnido', 'Sentidos aumentados', 'Super fuerza', 'Super velocidad', 'Telepatía', 'Telequinesis', 'Trepar paredes', 'Viaje astral', 'Viaje en el tiempo', 'Vibranium', 'Visión de calor', 'Visión precisa', 'Volar'];
 
   constructor(
     public dialogRef: MatDialogRef<AddSuperheroDialogComponent>,
@@ -64,8 +64,11 @@ export class AddSuperheroDialogComponent {
     return this.nameFormGroup.controls['name'].valid;
   }
 
+  isPowersValid(): boolean {
+    return this.powersFormControl.valid;
+  }
+
   get powersFormControl() {
     return this.powersFormGroup.controls['powers'];
   }
-
 }

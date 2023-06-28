@@ -19,6 +19,18 @@ th {
     text-align: center;
 }
 
+.mat-column-name {
+    width: 30%;
+}
+
+.mat-column-powers {
+    width: 50%;
+}
+
+.mat-column-actions {
+    width: 20%;
+}
+
 .mat-icon-button {
     padding: 5px;
 }
@@ -43,6 +55,9 @@ th {
 .add-button {
     flex: 0 0 15%;
     margin-right: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .add-button .mat-button-wrapper {

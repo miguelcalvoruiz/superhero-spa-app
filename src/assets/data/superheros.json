@@ -1,28 +1,406 @@
 {
-    "superheroes": [
-        {
-            "id": "ID-3fA1B9",
-            "name": "Superman",
-            "powers": [
-                "Volar",
-                "Super fuerza"
-            ]
-        },
-        {
-            "id": "ID-j8G4sT",
-            "name": "Spiderman",
-            "powers": [
-                "Trepar paredes",
-                "Sentido arácnido"
-            ]
-        },
-        {
-            "id": "ID-Dn0R7m",
-            "name": "Batman",
-            "powers": [
-                "Inteligencia",
-                "Habilidades de combate"
-            ]
-        }
-    ]
+  "superheroes": [
+    {
+      "id": "ID-3fA1B9",
+      "name": "Superman",
+      "powers": [
+        "Volar",
+        "Super fuerza"
+      ]
+    },
+    {
+      "id": "ID-j8G4sT",
+      "name": "Spiderman",
+      "powers": [
+        "Trepar paredes",
+        "Sentido arácnido"
+      ]
+    },
+    {
+      "id": "ID-Dn0R7m",
+      "name": "Batman",
+      "powers": [
+        "Inteligencia",
+        "Habilidades de combate"
+      ]
+    },
+    {
+      "id": "ID-QaIYTo",
+      "name": "Ironman",
+      "powers": [
+        "Fuerza",
+        "Volar",
+        "Rayos X"
+      ]
+    },
+    {
+      "id": "ID-2gX9F8",
+      "name": "Wonder Woman",
+      "powers": [
+        "Super fuerza",
+        "Volar",
+        "Sabiduría divina"
+      ]
+    },
+    {
+      "id": "ID-r5M1P7",
+      "name": "Hulk",
+      "powers": [
+        "Super fuerza",
+        "Regeneración",
+        "Poder de salto"
+      ]
+    },
+    {
+      "id": "ID-p3K6R2",
+      "name": "Flash",
+      "powers": [
+        "Super velocidad",
+        "Viaje en el tiempo",
+        "Curación acelerada"
+      ]
+    },
+    {
+      "id": "ID-u9Q2A1",
+      "name": "Thor",
+      "powers": [
+        "Control del trueno",
+        "Super fuerza",
+        "Inmortalidad"
+      ]
+    },
+    {
+      "id": "ID-s7N4L9",
+      "name": "Captain America",
+      "powers": [
+        "Super fuerza",
+        "Agilidad",
+        "Reflejos mejorados"
+      ]
+    },
+    {
+      "id": "ID-m6H3W8",
+      "name": "Black Widow",
+      "powers": [
+        "Maestría en combate",
+        "Agilidad",
+        "Experta en espionaje"
+      ]
+    },
+    {
+      "id": "ID-f5K7U2",
+      "name": "Wolverine",
+      "powers": [
+        "Regeneración acelerada",
+        "Garras retráctiles",
+        "Sentidos aumentados"
+      ]
+    },
+    {
+      "id": "ID-t8V2H6",
+      "name": "Green Lantern",
+      "powers": [
+        "Creación de objetos con el anillo",
+        "Volar",
+        "Fuerza sobrehumana"
+      ]
+    },
+    {
+      "id": "ID-x4D3E1",
+      "name": "Aquaman",
+      "powers": [
+        "Comunicación con los animales marinos",
+        "Super fuerza",
+        "Control del agua"
+      ]
+    },
+    {
+      "id": "ID-b1R9I3",
+      "name": "Doctor Strange",
+      "powers": [
+        "Manipulación de la realidad",
+        "Magia",
+        "Viaje astral"
+      ]
+    },
+    {
+      "id": "ID-q6T7Y4",
+      "name": "Black Panther",
+      "powers": [
+        "Agilidad sobrehumana",
+        "Sentidos aumentados",
+        "Vibranium"
+      ]
+    },
+    {
+      "id": "ID-w2V5J7",
+      "name": "Super Girl",
+      "powers": [
+        "Volar",
+        "Super fuerza",
+        "Visión de calor"
+      ]
+    },
+    {
+      "id": "ID-h8G6B1",
+      "name": "Storm",
+      "powers": [
+        "Control del clima",
+        "Volar",
+        "Manipulación de los elementos"
+      ]
+    },
+    {
+      "id": "ID-k3M4O7",
+      "name": "Hawkeye",
+      "powers": [
+        "Maestría en arquería",
+        "Agilidad",
+        "Visión precisa"
+      ]
+    },
+    {
+      "id": "ID-n9E5C2",
+      "name": "Jean Grey",
+      "powers": [
+        "Telepatía",
+        "Telequinesis",
+        "Fénix"
+      ]
+    },
+    {
+      "id": "ID-z7S8D6",
+      "name": "Deadpool",
+      "powers": [
+        "Regeneración acelerada",
+        "Habilidades de combate",
+        "Romper la cuarta pared"
+      ]
+    },
+    {
+      "id": "ID-v1F2K8",
+      "name": "Ant-Man",
+      "powers": [
+        "Encogerse",
+        "Aumentar de tamaño",
+        "Comunicación con las hormigas"
+      ]
+    },
+    {
+      "id": "ID-y6R3T9",
+      "name": "Catwoman",
+      "powers": [
+        "Agilidad sobrehumana",
+        "Sentidos aumentados",
+        "Experta en artes marciales"
+      ]
+    },
+    {
+      "id": "ID-g4B7U3",
+      "name": "Supergirl",
+      "powers": [
+        "Volar",
+        "Super fuerza",
+        "Visión de calor"
+      ]
+    },
+    {
+      "id": "ID-l5W1E4",
+      "name": "Green Arrow",
+      "powers": [
+        "Maestría en arquería",
+        "Agilidad",
+        "Experto en combate cuerpo a cuerpo"
+      ]
+    },
+    {
+      "id": "ID-r2Q6V1",
+      "name": "Captain Marvel",
+      "powers": [
+        "Super fuerza",
+        "Volar",
+        "Rayos láser"
+      ]
+    },
+    {
+      "id": "ID-u3I9S7",
+      "name": "Wonder Man",
+      "powers": [
+        "Super fuerza",
+        "Volar",
+        "Inmunidad"
+      ]
+    },
+    {
+      "id": "ID-s8K4T1",
+      "name": "Cyclops",
+      "powers": [
+        "Rayos láser",
+        "Visión precisa",
+        "Liderazgo"
+      ]
+    },
+    {
+      "id": "ID-m9H7R5",
+      "name": "Professor X",
+      "powers": [
+        "Telepatía",
+        "Control mental",
+        "Genio intelectual"
+      ]
+    },
+    {
+      "id": "ID-t6V3G9",
+      "name": "Gambit",
+      "powers": [
+        "Cargar objetos con energía",
+        "Experto en combate cuerpo a cuerpo",
+        "Agilidad"
+      ]
+    },
+    {
+      "id": "ID-a1J4L6",
+      "name": "The Flash",
+      "powers": [
+        "Super velocidad",
+        "Viaje en el tiempo",
+        "Curación acelerada"
+      ]
+    },
+    {
+      "id": "ID-p7K2N9",
+      "name": "Black Canary",
+      "powers": [
+        "Grito sónico",
+        "Experta en artes marciales",
+        "Agilidad"
+      ]
+    },
+    {
+      "id": "ID-d4R9P7",
+      "name": "Green Hulk",
+      "powers": [
+        "Super fuerza",
+        "Regeneración",
+        "Poder de salto"
+      ]
+    },
+    {
+      "id": "ID-x2H3Q5",
+      "name": "Black Panther",
+      "powers": [
+        "Agilidad sobrehumana",
+        "Sentidos aumentados",
+        "Vibranium"
+      ]
+    },
+    {
+      "id": "ID-z5W7T3",
+      "name": "Doctor Strange",
+      "powers": [
+        "Manipulación de la realidad",
+        "Magia",
+        "Viaje astral"
+      ]
+    },
+    {
+      "id": "ID-g8J6M2",
+      "name": "Captain America",
+      "powers": [
+        "Super fuerza",
+        "Agilidad",
+        "Reflejos mejorados"
+      ]
+    },
+    {
+      "id": "ID-v1N9E5",
+      "name": "Thor",
+      "powers": [
+        "Control del trueno",
+        "Super fuerza",
+        "Inmortalidad"
+      ]
+    },
+    {
+      "id": "ID-y4K7O2",
+      "name": "Hawkeye",
+      "powers": [
+        "Maestría en arquería",
+        "Agilidad",
+        "Visión precisa"
+      ]
+    },
+    {
+      "id": "ID-r7U2S4",
+      "name": "Black Widow",
+      "powers": [
+        "Maestría en combate",
+        "Agilidad",
+        "Experta en espionaje"
+      ]
+    },
+    {
+      "id": "ID-b6D8V3",
+      "name": "Spider-Woman",
+      "powers": [
+        "Agilidad sobrehumana",
+        "Sentidos aumentados",
+        "Poderes arácnidos"
+      ]
+    },
+    {
+      "id": "ID-n3C7A5",
+      "name": "Iron Fist",
+      "powers": [
+        "Puño de hierro",
+        "Maestría en artes marciales",
+        "Energía chi"
+      ]
+    },
+    {
+      "id": "ID-e9T5H7",
+      "name": "Scarlet Witch",
+      "powers": [
+        "Manipulación de la realidad",
+        "Magia",
+        "Proyección de energía"
+      ]
+    },
+    {
+      "id": "ID-k2L6F4",
+      "name": "Vision",
+      "powers": [
+        "Intangibilidad",
+        "Volar",
+        "Super fuerza"
+      ]
+    },
+    {
+      "id": "ID-j7G4K6",
+      "name": "Deadpool",
+      "powers": [
+        "Regeneración acelerada",
+        "Habilidades de combate",
+        "Romper la cuarta pared"
+      ]
+    },
+    {
+      "id": "ID-q4V3R6",
+      "name": "Ant-Man",
+      "powers": [
+        "Encogerse",
+        "Aumentar de tamaño",
+        "Comunicación con las hormigas"
+      ]
+    },
+    {
+      "id": "ID-x1S2C4",
+      "name": "Ghost Rider",
+      "powers": [
+        "Moto infernal",
+        "Fuerza sobrehumana",
+        "Castigo divino"
+      ]
+    }
+  ]
 }

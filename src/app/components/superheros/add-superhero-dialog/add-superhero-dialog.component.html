@@ -27,11 +27,22 @@
                 <div class="stepper-buttons">
                     <button mat-button matStepperPrevious color="warn">{{ 'label.button.previous' | translate
                         }}</button>
-                    <button mat-button matStepperNext color="primary" [disabled]="!powersFormControl.valid"
-                        (click)="save()">{{ isEditing ? ('label.button.edit' | translate) : ('label.button.save' |
-                        translate) }}</button>
+                    <button mat-button matStepperNext color="primary" [disabled]="!powersFormControl.valid">{{ 'label.button.next'
+                        | translate }}</button>
                 </div>
             </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>{{ 'label.confirm' | translate }}</ng-template>
+            <div>
+                <p>{{ 'label.confirm.Add' | translate }} {{ nameFormGroup.value.name }} {{ 'label.confirm.withPowers' | translate }} {{ powersFormGroup.value.powers ? powersFormGroup.value.powers.join(', ') : '' }}?</p>
+                <div class="stepper-buttons">
+                    <button mat-button matStepperPrevious color="warn">{{ 'label.button.previous' | translate
+                        }}</button>
+                    <button mat-button color="primary" (click)="save()">{{ isEditing ? ('label.button.edit' | translate)
+                        : ('label.button.save' | translate) }}</button>
+                </div>
+            </div>
         </mat-step>
     </mat-horizontal-stepper>
 </div>
