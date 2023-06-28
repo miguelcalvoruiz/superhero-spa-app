@@ -1,3 +1,4 @@
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -46,6 +47,7 @@ export function translateFactory(provider: TranslateService){
     MatDialogModule,
     MatStepperModule,
     MatSelectModule,
+    MatToolbarModule,
     FormsModule,
     ReactiveFormsModule
   ],
